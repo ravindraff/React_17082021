@@ -1,0 +1,43 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\ravin\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add axios expressmongodb mongoose body-parser cors nodemon --save
+
+PATH: 
+  C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\Microsoft MPI\Bin\;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\nodejs\;D:\PhpProjects\xampp\php;C:\ProgramData\ComposerSetup\bin;C:\Program Files\Git\cmd;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files\Microsoft SQL Server\150\DTS\Binn\;C:\Users\ravin\anaconda3;C:\Users\ravin\anaconda3\Library\mingw-w64\bin;C:\Users\ravin\anaconda3\Library\usr\bin;C:\Users\ravin\anaconda3\Library\bin;C:\Users\ravin\anaconda3\Scripts;C:\Users\ravin\AppData\Local\Microsoft\WindowsApps;C:\Users\ravin\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\PyCharm Community Edition 2019.2.4\bin;;C:\Users\ravin\AppData\Roaming\npm;C:\Users\ravin\AppData\Local\JetBrains\PyCharm 2020.3.3\bin;;C:\Users\ravin\AppData\Roaming\Composer\vendor\bin;C:\Users\ravin\.dotnet\tools;
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  14.7.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/expressmongodb: Not found
+      at Request.params.callback [as _callback] (C:\Users\ravin\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:66988:18)
+      at Request.self.callback (C:\Users\ravin\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:140662:22)
+      at Request.emit (events.js:314:20)
+      at Request.<anonymous> (C:\Users\ravin\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141634:10)
+      at Request.emit (events.js:314:20)
+      at IncomingMessage.<anonymous> (C:\Users\ravin\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141556:12)
+      at Object.onceWrapper (events.js:420:28)
+      at IncomingMessage.emit (events.js:326:22)
+      at endReadableNT (_stream_readable.js:1244:12)
+      at processTicksAndRejections (internal/process/task_queues.js:80:21)
+
+npm manifest: 
+  {
+      "name": "name",
+      "description": "description",
+      "authors": "author",
+      "version": "1.0.0",
+      "main": "pathToMain",
+      "dependencies": {}
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
