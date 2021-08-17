@@ -8,6 +8,7 @@ import { BrowserRouter as Router,Route,Switch } from 'react-router-dom'
 import Posts from './layout/Posts';
 import Movies from './layout/Movies';
 import Calculator from './layout/Calculator';
+import Covid from './layout/Covid';
 function App() {
   return (
     <div className="App">
@@ -20,6 +21,7 @@ function App() {
         <Route path="/posts" exact component={Posts} />
         <Route path="/movies" exact component={Movies} />
         <Route path="/claculator" exact component={Calculator} />
+        <Route path="/covid" exact component={Covid} />
       </Switch>
       </Router>
       
