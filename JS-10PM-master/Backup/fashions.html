@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <script>
+            function fun_one(){
+                return new Promise((resolve,reject)=>{
+                    $.ajax({
+                        method : "GET",
+                        url:"http://localhost:3000/fashions",
+                        success : (posRes)=>{
+                            resolve(posRes);
+                        },
+                        error:(errRes)=>{
+                            reject(errRes);
+                        }
+                    })
+                });
+            };
+
+            async function fun_two(){
+                const res = await fun_one();
+                res.forEach((element)=>{
+                    document.write(`
+                        <img src=${element.image}>
+                    `);
+                });
+            };
+
+            fun_two();
+
+        </script>
+    </body>
+</html>

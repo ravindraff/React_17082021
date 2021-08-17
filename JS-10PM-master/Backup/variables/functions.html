@@ -1,0 +1,1051 @@
+<!--
+<script>
+    function fun_one(){
+        return "welcome to ashokit";
+    };
+    console.log( fun_one );                 //def
+    console.log( fun_one() );               //welcome to ashokit
+</script>
+-->
+
+
+<!--
+<script>
+    function fun_one(){
+        return fun_two;
+    };
+
+    function fun_two(){
+        return "welcome to ashokit";
+    };
+
+    console.log( fun_one()() );             //welcome to ashokit
+</script>
+-->
+
+<!--
+<script>
+    function fun_one(){
+        return fun_two;
+    };
+
+    function fun_two(){
+        return fun_three;
+    };
+
+    function fun_three(){
+        return "Hello";
+    };
+
+    console.log( fun_one()()() );               //Hello
+
+</script>
+-->
+
+
+
+<!--
+<script>
+    function fullStack(arg1,arg2,arg3){
+        console.log( arg1, arg2, arg3 );
+    };
+    fullStack("ReactJS","NodeJS","MongoDB");                //ReactJS NodeJS MongoDB
+    fullStack("Angular11","NodeJS","MongoDB");              //Angular11 NodeJS MongoDB
+    fullStack("VueJS","NodeJS","MongoDB");                  //VueJS NodeJS MongoDB
+    fullStack();                                            //undefined undefined undefined
+    fullStack(undefined,"Hello_2");                         //undefined "Hello_2" undefined
+    fullStack("Hello_1","Hello_2","Hello_3","Hello_4");     //Hello_1 Hello_2 Hello_3
+    fullStack(null,null,null);                              //null null null
+</script>
+-->
+
+
+<!--
+<script>
+    function fun_one(arg1,arg2,arg3){
+        console.log( arg1, arg2, arg3 );
+    };
+
+    function fun_two(){
+        return "Hello_1";
+    };
+
+    function fun_three(){
+        return "Hello_2";
+    };
+
+    function fun_four(){
+        return "Hello_3";
+    };
+
+    fun_one( fun_two(),fun_three(), fun_four() );           //Hello_1 Hello_2 Hello_3
+</script>
+-->
+
+<!--
+<script>
+    var data = "Hello";
+
+    function data(){
+        return "Hello";
+    };
+
+    console.log( data );                //Hello
+    console.log( data() );              //Uncaught TypeError: data is not a function
+</script>
+-->
+
+
+<!--
+<script>
+    var data = 100;
+    //console.log( data );            //100
+    //fun_one();                        //200
+    function fun_one(){
+        var data = 200;
+        console.log( data );
+    };
+    fun_one();                      //200
+</script>
+-->
+
+<!--
+    Anounymous Functions
+    --------------------
+        - The function without name called as "Anounymous" Function.
+
+        - Anounymous Functions also called as "Arrow" Functions.
+
+        - Arrow Functions introduced in "ES6".
+
+        - we will represent Arrow Functions "=>"
+
+Syntax
+------
+    //function definition
+    var/let/const functionname = (arg1, arg2, arg3, arg4, ..... argn)=>{
+        //business logic
+    };
+
+    //call the function
+    functionname(param1,param2,param3,param4,.....paramn);
+-->
+
+
+<!--
+<script>
+    let fun_one = ()=>{
+        return "welcome to arrow functions";
+    };
+    console.log( fun_one );
+    console.log( fun_one() );
+</script>
+-->
+
+
+<!--
+<script>
+   let fun_one = ()=>{
+       return ()=>{
+            return "Hello";
+       };
+   };
+   console.log( fun_one()() );              //Hello
+</script>
+-->
+
+
+<!--
+    Rest Parameters in Functions
+    -----------------------------
+        - we will store more than one value by using rest parameters in functions.
+
+        - we will represent rest parameter by using "..." symbol.
+
+        - "..." symbol called as rest parameter.
+
+        - rest parameter introduced in "ES6"
+
+    Rules
+    -----
+    1) rest parameter position should be "last"
+
+    2) we can have only "one" rest parameter
+-->
+
+<!--
+<script>
+    function fun_one(...arg1){
+        console.log(arg1);
+    };
+    fun_one("Hello_1");                         //["Hello_1"]
+    fun_one("Hello_1","Hello_2");               //["Hello_1", "Hello_2"]
+    fun_one("Hello_1","Hello_2","Hello_3");     // ["Hello_1", "Hello_2", "Hello_3"]
+    fun_one();                                  //[]
+    fun_one(undefined);                         //[undefined]
+    fun_one(undefined,null);                    //[undefined, null]
+</script>
+-->
+
+
+<!--
+<script>
+    function fun_one( ...arg1, ...arg2 ){
+
+    };
+    //Uncaught SyntaxError: Rest parameter must be last formal parameter
+</script>
+-->
+
+<!--
+<script>
+    function fun_one(...arg1,arg2){}
+    //Uncaught SyntaxError: Rest parameter must be last formal parameter
+</script>
+-->
+
+
+<!--
+<script>
+    function fun_one(arg1, ...arg2){
+        console.log( arg1, arg2 );
+    };
+    fun_one();                              //undefined []
+    fun_one("Hello_1");                     //Hello_1 []
+    fun_one("Hello_1","Hello_1");           //Hello_1 ["Hello_1"]
+    fun_one(undefined,undefined);           //undefined [undefined]
+    fun_one(null,null);                     //null [null]
+</script>
+-->
+
+<!--
+    Default Parameters in Functions
+    -------------------------------
+        - while defining the functions, we will initilize arguments with default values.
+
+        - this concept also introduced in "ES6"
+-->
+
+<!--
+<script>
+    function fun_one(arg1="Hello_1",arg2="Hello_2",arg3="Hello_3"){
+        console.log( arg1, arg2, arg3 );
+    };
+    fun_one();                                      //Hello_1 Hello_2 Hello_3
+    fun_one("Welcome_1","Welcome_2","Welcome_3");   //Welcome_1 Welcome_2 Welcome_3
+    fun_one(undefined,undefined,undefined);         //Hello_1 Hello_2 Hello_3
+    fun_one(null,null,null);                        //null null null
+</script>
+-->
+
+
+<!--
+<script>
+    //combination of regular with default parameter
+    function fun_one(arg1,arg2="Hello_2"){
+        console.log( arg1, arg2 );
+    };
+    fun_one();                          //undefined "Hello_2"
+    fun_one("Hello_1");                 //Hello_1 Hello_2
+    fun_one(undefined,undefined);       //undefined "Hello_2"
+    fun_one(null,null);                 //null null
+</script>
+-->
+
+
+<!--
+<script>
+    //regular , default and rest parameter
+    function fun_one(arg1,arg2="Hello_2",...arg3){
+        console.log( arg1, arg2, arg3 );
+    };
+    fun_one();                              //undefined "Hello_2" []
+    fun_one("Hello_1");                     //Hello_1 Hello_2 []
+    fun_one("Hello_1",undefined,"Hello_3"); //Hello_1 Hello_2 ["Hello_3"]
+    fun_one(undefined,undefined,undefined); //undefined "Hello_2" [undefined]
+    fun_one(null,null,null);                //null null [null]
+</script>
+-->
+
+
+<!--
+    IIFE
+    ----
+        "IIFE" Stands for Immidiate Invokable Functional Expression
+
+        "ES9"
+
+        - when ever, we create the function, automatically it will invoke
+    Syntax
+    ------
+    ((arg1,arg2,arg3,.....argn)=>{
+        ----
+        ----
+        ----
+        business logic
+        ----
+        ----
+        ----
+    })(param1,param2,param3,....paramn)
+
+-->
+
+<!--
+<script>
+    (()=>{
+        console.log("welcome to IIFE");
+    })()
+    //welcome to IIFE
+</script>
+-->
+
+<!--
+<script>
+    ((arg1,arg2,arg3)=>{
+        console.log( arg1, arg2, arg3 );
+    })("Hello_1","Hello_2","Hello_3");
+    //Hello_1 Hello_2 Hello_3
+</script>
+-->
+
+<!--
+<script>
+    let res = (()=>{
+        return "welcome to IIFE";
+    })();
+    console.log( res );    //welcome to IIFE
+</script>
+-->
+
+
+<!--
+<script>
+    function fun_one(arg1,arg2,arg3){
+        console.log( arg1, arg2, arg3 );
+    };
+
+    fun_one(
+
+        (()=>{ return "Hello_1" })(),
+
+        (()=>{ return "Hello_2" })(),
+
+        (()=>{ return "Hello_3" })()
+    );
+    //Hello_1 Hello_2 Hello_3    
+
+</script>
+-->
+
+<!--
+    constructor functions
+    ---------------------
+        - collection of variables and functions called as "class".
+
+        - before ES6 version, we will create classes by using constructor functions.
+
+        - in constructor functions, all the members should start with "this" keyword.
+
+        - we can create object to the constructor functions by using "new" keyword.
+-->
+
+<!--
+<script>
+    function class_one(){
+        this.sub_one = "ReactJS";
+        this.sub_two = "NodeJS";
+        this.sub_three = "MongoDB";
+    };
+    let obj = new class_one();
+    console.log( obj.sub_one, obj.sub_two, obj.sub_three );     //ReactJS NodeJS MongoDB
+</script>
+-->
+
+
+<!--
+<script>
+    function class_one(){
+        this.mern = "MERN Stack";
+        this.getMern = function(){
+            return this.mern;
+        };
+    };
+    let obj1 = new class_one();
+    console.log( obj1.getMern() );          //MERN Stack
+
+    let obj2 = new class_one();
+    console.log( obj2.mern );               //MERN Stack
+</script>
+-->
+
+<!--
+<script>
+    function class_one(){
+        
+        this.meanFun = function(){
+            return "MEAN Stack";
+        };
+
+        this.mernStack = function(){
+            return "MERN Stack";
+        };
+
+        this.mevnStack = function(){
+            return "MEVN Stack";
+        };
+
+    };
+
+    let obj1 = new class_one();
+    console.log( obj1.meanFun(), obj1.mernStack(), obj1.mevnStack() );
+    //MEAN Stack MERN Stack MEVN Stack
+</script>
+-->
+
+
+<!--
+<script>
+    function class_one( arg1, arg2, arg3 ){
+        this.var_one = arg1;
+        this.var_two = arg2;
+        this.var_three = arg3;
+    };
+    let obj1 = new class_one("ReactJS","NodeJS","MongoDB");
+    console.log( obj1.var_one, obj1.var_two, obj1.var_three );
+    //ReactJS NodeJS MongoDB
+
+    let obj2 = new class_one("Angular11","Deno","CassandraDB");
+    console.log( obj2.var_one, obj2.var_two, obj2.var_three );
+    //Angular11 Deno CassandraDB
+
+    let obj3 = new class_one("VueJS","NodeJS","MySQL");
+    console.log( obj3.var_one, obj3.var_two, obj3.var_three );
+    //VueJS NodeJS MySQL
+</script>
+-->
+
+<!--
+<script>
+    function class_one(arg1, arg2, arg3){
+        this.var_one = arg1;
+        this.var_two = arg2;
+        this.var_three = arg3;
+    };
+    function class_two(){
+        this.fun_one = function(){
+            return "Hello_1";
+        };
+    };
+    function class_three(){
+        this.fun_one = function(){
+            return "Hello_2";
+        }; 
+    };
+    function class_four(){
+        this.fun_one = function(){
+            return "Hello_3";
+        };
+    };
+    let obj = new class_one( new class_two(), new class_three(), new class_four() );
+    console.log(  obj.var_one.fun_one() , obj.var_two.fun_one(), obj.var_three.fun_one() );
+    //Hello_1 Hello_2 Hello_3
+</script>
+-->
+
+<!--
+<script>
+    function class_one(arg1,arg2,arg3){
+
+    };
+    let obj = new class_one("Hello_1","Hello_2","Hello_3");
+    console.log( obj.arg1, obj.arg2, obj.arg3 );
+    //undefined undefined undefined
+</script>
+-->
+
+
+<!--
+<script>
+    function class_one(){
+        this.fun_one = ()=>{
+            return "Hello";
+        }
+    };
+    console.log( new class_one().fun_one() );   //Hello
+</script>
+-->
+
+
+<!--
+<script>
+    let class_one = ()=>{
+        this.var_one = "Hello";
+    };
+    console.log( new class_one().var_one );
+    //Uncaught TypeError: class_one is not a constructor
+</script>
+-->
+
+<!--
+<script>
+    function class_one(){
+
+    };
+
+    class_one.prototype.var_one = "Hello_1";
+    class_one.prototype.var_two = "Hello_2";
+    class_one.prototype.var_three = "Hello_3";
+    
+    let obj1 = new class_one();
+    console.log( obj1.var_one, obj1.var_two, obj1.var_three );  //Hello_1 Hello_2 Hello_3
+
+</script>
+-->
+
+<!--
+<script>
+    function class_one(){
+
+    };
+
+    class_one.prototype.var_one = "Hello";
+    class_one.prototype.fun_one = function(){
+        return "Hello_2";
+    };
+
+    let obj = new class_one();
+    console.log( obj.var_one, obj.fun_one() );    //Hello Hello_2
+</script>
+-->
+
+
+<!-- 
+    inheritance (prototype chaining)
+    --------------------------------
+-->
+
+<!--
+<script>
+    function class_one(){
+
+    };
+    class_one.prototype.var_one = "Hello_1";
+
+
+    function class_two(){
+
+    };
+    class_two.prototype = Object.create( class_one.prototype );
+    class_two.prototype.var_two = "Hello_2";
+
+    let obj = new class_two();
+    console.log( obj.var_one, obj.var_two );    //Hello_1 Hello_2
+
+</script>
+-->
+
+
+<!--
+<script>
+    function class_one(){
+
+    };
+    class_one.prototype.fun_one = function(){
+        return "Hello_1";
+    };
+
+    function class_two(){
+
+    };
+    class_two.prototype = Object.create( class_one.prototype );
+    class_two.prototype.fun_two = function(){
+        return "Hello_2";
+    };
+
+    function class_three(){
+
+    };
+    class_three.prototype = Object.create( class_two.prototype );
+    class_three.prototype.fun_three = function(){
+        return "Hello_3";
+    };
+
+    let obj1 = new class_one();
+    console.log( obj1.fun_one() );          //Hello_1
+
+    let obj2 = new class_two();
+    console.log( obj2.fun_one(), obj2.fun_two() );   //Hello_1 Hello_2
+
+
+    let obj3 = new class_three();
+    console.log( obj3.fun_one(), obj3.fun_two(), obj3.fun_three() );    //Hello_1 Hello_2 Hello_3
+</script>
+-->
+
+
+<!--
+    function overriding
+    -------------------
+        - overriding the parent class functionality with child class functionality called as function overriding.
+
+        - Rule:
+          -----
+            both parent class and child class should have same function name
+-->
+
+<!--
+<script>
+    function Parent(){
+
+    };
+    Parent.prototype.dbFun = function(){
+        return "MySQL Data Soon....!";
+    };
+
+    function Child(){
+
+    };
+    Child.prototype = Object.create(Parent.prototype);
+    Child.prototype.dbFun = function(){
+        return "MongoDB Data Soon....!";  
+    };
+
+    let obj = new Child();
+    console.log( obj.dbFun() );    //MongoDB Data Soon....!
+</script>
+-->
+
+
+<!--
+<script>
+    function Parent(){
+
+    };
+    Parent.prototype.dbFun = function(){
+        return "Oracle Data Soon...!";
+    };
+
+    function Child(){
+
+    };
+    Child.prototype = Object.create(Parent.prototype);
+    Child.prototype.dbFun = function(){
+        return "MySQL Data Soon....!";
+    };
+
+
+    function Subchild(){
+
+    };
+    Subchild.prototype = Object.create(Child.prototype);
+    Subchild.prototype.dbFun = function(){
+        return "MongoDB Data Soon...!";
+    };
+    let obj = new Subchild();
+    console.log( obj.dbFun() );     //MongoDB Data Soon...!
+</script>
+-->
+
+<!--
+<script>
+    function my_class(arg1){
+
+    };
+    my_class.prototype.var_one = arg1;
+    let obj = new my_class("Hello");
+    console.log( obj.var_one );        //Uncaught ReferenceError: arg1 is not defined
+</script>
+-->
+
+
+<!--
+<script>
+    function class_one(arg1){
+        this.var_one = "arg1";
+    };
+    class_one.prototype.var_two = this.var_one;
+
+    let obj = new class_one("Hello");
+    console.log( obj.var_two );      //undefined
+</script>
+-->
+
+
+<!--
+    generator functions
+    -------------------
+        - generator functions are used to "control" the flow of execution of code.
+
+        - this concept also introduced in "ES6".
+
+        - generator functions prefix with "*".
+
+        - generator functions will return "cursor" mechanism.
+
+        - by using cursor mechanism, we can control the "flow" of execution.
+-->
+
+
+
+<!--
+<script>
+    function *fun_one(){
+        yield "Hello_1";
+        yield "Hello_2";
+        yield "Hello_3";
+        yield "Hello_4";
+        yield "Hello_5";
+    };
+    let cursor = fun_one();
+    console.log( cursor.next() );
+    console.log( cursor.next() );
+    console.log( cursor.next() );
+    console.log( cursor.next() );
+    console.log( cursor.next() );
+    console.log( cursor.next() );
+</script>
+-->
+
+
+<!--
+<script>
+    function *fun_one(){
+        yield "Hello_1";
+        yield *fun_two();
+        yield "Hello_3";
+    };
+    function *fun_two(){
+        yield "Hello_2";
+    };
+    let cusror = fun_one();
+    console.log( cusror.next() );
+    console.log( cusror.next() );
+    console.log( cusror.next() );
+    console.log( cusror.next() );
+</script>
+-->
+
+<script>
+    function *fun_one(){
+        yield "Hello_1";
+        return "Hello_2";
+        yield "Hello_3";
+    };
+    let cursor = fun_one();
+    console.log( cursor.next() );
+    console.log( cursor.next() );
+    console.log( cursor.next() );
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

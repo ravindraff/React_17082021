@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM Manipulations</title>
+    </head>
+    <body>
+        <!--
+        <p>Paragraph One</p>
+        <p>Paragraph Two</p>
+        <div>Div One</div>
+        <p>Paragraph Three</p>
+        <div>Div Two</div>
+        -->
+        <!-- <button onclick="myFun()">Click Me</button> -->
+
+        <button>ClickMe</button>
+
+    </body>
+    <script>
+        
+        // let btn = document.querySelector("button");
+        // btn.onclick = myFun;
+
+        // function myFun(){
+        //     console.log("click me");
+        // };  
+
+        let btn = document.querySelector("button");
+        btn.addEventListener("click",myFun)
+        function myFun(){
+            console.log("click me");
+        }; 
+        btn.removeEventListener("click",myFun);
+
+
+        /*
+         let ele = document.querySelector("p");
+         ele.style.color = "red";
+
+         let ele1 = document.querySelector("div");
+         ele1.style.color = "green";
+
+
+        let allParagraphs = document.querySelectorAll("p");
+        for(let p of allParagraphs)
+            p.style.color = "red";
+
+
+        let allDivisions = document.querySelectorAll("div");
+        for(let div of allDivisions)
+            div.style.color = "pink";
+        */
+
+
+    </script>
+</html>

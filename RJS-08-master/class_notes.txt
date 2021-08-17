@@ -1,0 +1,1244 @@
+Differences Between Angular Framework and React Library
+--------------------------------------------------------
+
+                            Angular                                         ReactJS
+
+ 1)   company               Google                                          Facebook
+
+ 2)   Version               Angular12                                       17.x
+
+ 3)   DOM                   Real DOM                                        Virtual DOM
+                            (takes the less space)                          (takes the more space)
+
+ 4)  Performance            Less Performance Compared                       10.X more performance compared to Angular
+                            ReactJS
+
+ 5) Language                TypeScript                                      1) JSX          2) TSX
+                                                                    (smaller applications)  (large applications)
+
+ 6) Data Binding            two way data binding                            one way data binding
+                            (automatic data synchronization                 (when ever model updated then only view will be updated called as one way data binding)
+                            between model and view in presence                  
+                            of component called as two way
+                            data binding)
+
+
+ 7) display                 {{ }}   //interpolation                         { }   //interpolation
+
+
+ 8) Nature                  Framework                                       library
+
+ 9) market share            57.6%                                           74.5%
+
+ 10) Architecture           Component Based                                 Component Based                                           
+
+ 11) Performance            Minification                                    Webpack tool  
+
+ 12) support                provides rich library                           need to download 3rd party libraries
+                            to implement web application.
+
+                            Ex.                                              Ex.
+                                RXJS                                            axios
+
+                                NGRX                                            react-router-dom
+
+                                RouterModule                                    ----
+
+                                ----                                            ----
+                                ----                                            ----
+ 13) compatability           we can't integrate to any other                we can integrate to any other
+                             front end technologies eazily                  front end technologies eazily
+
+
+
+Software Installation
+---------------------
+
+1) download and install NodeJS
+
+    "NodeJS" containes following tools.
+
+        1) node
+
+        2) npm
+
+        3) npx
+
+    node tool, used to execute the JavaScript.
+
+    npm stands for node packaging manager.
+
+    npm tool helps to install the ReactJS, Angular12, VueJS,......
+
+    npx stands for node packaging runner.
+
+    npx creates the environment to create the react applications
+
+website : https://nodejs.org/en/
+
+file    : node-v16.1.0-x64.msi
+
+
+2) install yarn tool
+
+    yarn tool, provided by facebook.
+
+    yarn tool, used to download the 3rd party libraries.
+
+    yarn tool, Installation is command based Installation.
+
+
+    > npm install -g yarn
+
+    where "-g" stands for global installation
+
+
+3) install create-react-app tool.
+
+    create-react-app tool provided by facebook.
+
+    create-react-app tool tool, used to create the react applications.
+
+    create-react-app tool installation also command based installation.
+
+    
+    > npm install -g create-react-app
+
+
+4) install visual studio code
+
+    VSCode given by Microsoft.
+
+    VSCode is the open source IDE.
+
+    VSCode used to develop the React, Angular, VueJS, NodeJS,........
+
+
+    website : https://code.visualstudio.com/docs/?dv=win
+
+    file    : VSCodeUserSetup-x64-1.56.2.exe
+
+
+
+                                    ****** Steps to create the React Application ******
+
+
+Step 1.
+    create the react application
+
+    > npx create-react-app first-app --template typescript
+
+    where "first-app" is the name of the react application.
+
+
+Step 2.
+    switch to react application
+
+    > cd first-app
+
+
+Step 3.
+    execute the react application
+
+    > yarn start
+
+
+    The Default port number of react application is 3000
+
+
+
+Directory Structure of React Application
+----------------------------------------
+
+node_modules
+------------
+    - this Directory containes libraries.
+
+    - these libraries helps to create and execute the react application.
+
+
+public/favicon.ico
+-------------------
+    - this logo representing default logo of reactjs
+
+public/index.html
+-----------------
+    - react starts the execution from "index.html" file.
+
+    - index.html file called as main template.
+
+    - main template containes "div" as DOM Element, whose id is "root"
+
+    Ex.
+        <div id="root"></div>
+
+public/logo192.png
+       logo512.png
+------------------
+    - above resolution images helps to execute the react applications in difference devices.
+
+manifest.json
+-------------
+    used to configure the mobile application development.
+
+public/robots.txt
+-----------------
+    used to define the conditional keywords related to react applications
+
+src/App.tsx
+    App.css
+    App.test.tsx
+-----------------
+    "App" Component is the default component.
+
+    "App.css" file is the style sheet for "App" Component.
+
+    "App.test.tsx" file the unit test case file for App component.
+
+src/index.css
+-------------
+    - used to define the global styles
+
+src / index.tsx
+----------------
+    - in general we will deploy components in src Directory.
+
+    - all components we must register in index.tsx file.
+
+src/svg.logo
+------------
+    - this is the default svg logo of "reactjs".
+
+    - svg stands for "scalar vector graphics".
+
+    - svg used to draw the diagrams by using "XML".
+
+    - svg images have "more clarity" compared to "Canvas".
+
+src/react-app-env.d.ts
+-----------------------
+    - used to configure the application level configurations.    
+
+src/setupTests.ts
+------------------
+    - privides the support to write unit test cases. 
+
+package.json
+------------
+    - used to download the 3rd party libaries.
+
+tsconfig.json
+--------------
+    - used to configure the typescript.
+
+                                    ***** Components *****
+
+        - Reusable portion of "complex UI" Called as Component.
+
+        - As a React Developer, we can create more than "one" component.
+
+        - As a React Developer, we can provide communication between one component to another component.
+
+        - React provides two types of Components.
+
+            1) Stateful Components    (Class Level Components)    (Latest)
+
+            2) Stateless Components    (Functional Level Components)
+
+        - state & props
+
+        - component own data called as "state".
+
+        - component receives the data from another component with the helps of "props".
+
+*******************************************
+component-app
+            src
+              First.tsx
+
+              index.tsx
+            
+            public
+                index.html
+******************************************
+
+
+
+**************************************************
+multi-components
+               src
+                 Header.tsx
+                 Body.tsx
+                 Footer.tsx
+
+                 Main.tsx
+
+                public  
+                    index.html
+**************************************************
+
+
+
+                                Change the State
+
+    setState() is the predefined function, used to change the state.
+
+*****************************
+state-ex1
+        src  
+          State.tsx
+
+          index.tsx
+******************************
+
+                                        ***** props ****
+    - props is the predefined object in react.
+
+    - props used to receive the data from one "component to another component"
+
+
+**************************************
+props-ex
+       src
+         First.tsx
+         Second.tsx
+
+         index.tsx
+**************************************
+
+
+****************************************
+props-ex1
+        src
+          First.tsx
+          Second.tsx
+          Third.tsx
+
+          index.tsx
+****************************************
+
+
+                                                Rest API Calls
+                                                --------------
+    - axios is the 3rd party module, used to make the rest api calls.
+
+    - we will download axios module by using npm or yarn tool.
+
+    > yarn add axios --save
+
+                                                ***** POST Request *****
+
+mongodb
+-------
+    - mongodb database is NoSQL database.
+
+    - mongodb database supports JSON.
+
+    - JSON is light weight.
+
+    - automatically mongodb database also light weight database.
+
+    - default port number of mongodb database is 27017
+
+    - mongodb database provides cloud environment with the support of MongoDB Atlas.
+
+
+        URL : https://account.mongodb.com/account/login
+
+
+        SQL                                                     NoSQL
+-------------------------------------------------------------------------------------------
+Ex.
+    oracle                                                      mongodb
+    mysql                                                       cassandra
+    sqlserver                                                   ----
+                                                                ----
+
+    tables                                                      collections
+
+    rows                                                        document
+
+    primary key                                                 _id
+
+    database                                                    database
+-------------------------------------------------------------------------------------------------
+
+
+database name   :   R08
+
+collection name : login_details
+
+user : admin
+
+password : admin
+
+connection url : mongodb+srv://admin:admin@cluster0.jgnmk.mongodb.net/R08?retryWrites=true&w=majority
+
+
+
+node server implementation
+--------------------------
+    - nodejs is the backend technology.
+
+    - nodejs used to develop the servers.
+
+            Ex.
+                    Http Server
+
+                    TCP Server
+
+    - we will implement nodejs applications by using JavaScript.
+
+    - nodejs supports modules/libraries.
+
+    - we will download these libraries by using "npm" tool or "yarn" tool.
+
+    - automatically above libraries downloads to "node_modules" folder.
+
+
+1) express
+
+    - used to develop the restful webservices.
+
+    Ex.
+            GET
+            POST
+            PUT
+            DELETE
+            ---
+            ---
+            ---
+
+2) cors
+
+    - used to enable the communication between different "ports".
+
+    - used to enable the cors policy.
+
+3) mongodb
+
+    - used to connect to mongodb database.
+
+
+4) body-parser
+
+        - used to parse the data coming from client application.
+
+
+create the directory
+--------------------
+
+Ex.
+    server
+
+
+switch to server directory
+--------------------------
+
+    > cd server
+
+download the node modules
+-------------------------
+
+    > yarn add express cors body-parser mongodb --save
+
+
+implement the node server
+-------------------------
+
+    Ex.
+            server.js
+
+
+start the node server
+---------------------
+
+    > node server
+
+
+test the rest api by using Postman
+-----------------------------------
+    http://localhost:8080/login   (POST)
+
+
+                                integration above rest api call to react application
+
+1) create the react application
+
+        > npx create-react-app mern-app --template typescript
+
+
+
+
+
+                
+
+                        ReactJS with Spring Boot Integration
+                        ++++++++++++++++++++++++++++++++++++
+
+1) execute the Spring boot application with cmd prompt
+
+    > java -jar Mini-Project-0.0.1-SNAPSHOT.jar
+
+2) test the rest api by using Postman.
+
+    > http://localhost:5000/api/v1/products
+
+3) create the react application
+
+    > npx create-react-app springboot-ex --template typescript
+
+4) switch to react application
+
+    > cd springboot-ex
+
+5) download the libraries / modules
+
+        => redux @types/redux
+
+        => react-redux  @types/react-redux
+
+        => redux-thunk  @types/redux-thunk
+
+        => axios @types/axios
+
+        > yarn add redux @types/redux react-redux @types/react-redux redux-thunk @types/redux-thunk axios @types/axios --save
+
+
+6) create the modal
+
+        **************************************
+        springboot-ex
+                    src
+                      modal
+                         Product.tsx
+        **************************************
+                finally "Product" modal is ready
+
+
+7) create the types
+
+        *****************************************
+        springboot-ex
+                    src
+                      types
+                        ProductActionTypes.tsx
+        ****************************************
+
+
+
+8) create the actions
+
+        ***********************************************
+        springboot-ex
+                    src
+                      actions
+                        ProductsAction.tsx
+        ***********************************************
+
+
+9) create the reducer
+
+     ************************************************
+     springboot-ex
+                 src
+                   reducer
+                      ProductReducer.tsx
+    ************************************************
+
+10) create the store
+
+    index.tsx
+
+
+11) create the component
+
+    App.tsx   (store)  (dispatch & subscribe)
+
+
+                                            MERN Project
+
+1) create the account with AWS.
+
+        URL : https://portal.aws.amazon.com/billing/signup#/start
+
+
+2) deploy images to s3 bucket
+
+    name of the bucket : restbuck
+
+    Mango URL'S
+
+    https://restbuck.s3.ap-south-1.amazonaws.com/alphano.jpg
+
+    https://restbuck.s3.ap-south-1.amazonaws.com/safeda.jpg
+
+    https://restbuck.s3.ap-south-1.amazonaws.com/raw.jpg
+
+    https://restbuck.s3.ap-south-1.amazonaws.com/amrapali.jpg
+
+    https://restbuck.s3.ap-south-1.amazonaws.com/kesar.jpg
+
+
+3) create the account with mongodb Atlas
+
+    mongodb Atlas provides the cloud environment.
+
+    URL : https://www.mongodb.com/try
+
+
+4) store the above images path to mongodb database.
+
+
+    - mongodb is the "NoSQL" DataBase.
+
+    - mongodb supports "JSON".
+
+    - mongodb database is the "light weight" database.
+
+    - mongodb database by default running on port number "27017"
+
+    - mongodb database provides the cloud platform.
+
+            "mongodb atlas"
+
+                    SQL                         NoSQL
+-------------------------------------------------------------------------------------
+Ex.
+        Oracle                                      MongoDB
+        MySQL                                       CassandraDB
+        SQLServer
+
+
+        DataBases                                   DataBases
+
+        tables                                      collections
+
+        records                                     document
+
+        primary key                                 _id
+----------------------------------------------------------------------------------------
+
+database name : miniproject
+
+collection name : products
+
+user name       : admin
+
+password        :   admin
+
+connecttion url : mongodb+srv://admin:admin@cluster0.jgnmk.mongodb.net/miniproject?retryWrites=true&w=majority
+
+
+                                ****** server implementation *******
+    - NodeJS is the backend technology.
+
+    - NodeJS, develops the Rest API'S with the help of ExpressJS.
+
+    - we will develop NodeJS Applications by using JavaScript.
+
+node modules
+------------
+    1) express
+
+            express used to develop the rest services.
+
+            Ex.
+                    GET
+                    POST
+                    PUT
+                    DELETE
+                    ---
+                    ---
+                    ---
+
+    2) cors
+
+            used to enable the cors policy
+
+    3) mongodb / mongoose
+
+            used to connect to mongodb database.
+
+    4) body-parser
+
+        used to receive the data from the client application.
+
+we will download above modules by using either "yarn" tool, "npm" tool
+
+=> create the directory
+
+    Ex.
+         fruits_server
+
+=> switch to directory
+
+    > cd fruits_server
+
+=> download the node modules
+
+        1) mongodb
+
+        2) cors
+
+        3) body-parser
+
+        4) express
+
+    > yarn add mongodb cors body-parser express --save
+
+=> create the server
+
+        server.js
+
+
+=> finally following rest apis are ready.
+
+        http://localhost:8080/products
+
+        http://localhost:8080/products/{category}
+
+
+
+Integration of Above Rest API Calls to ReactJS
+==============================================
+1) create the react application
+
+    > npx create-react-app fruits-frontend --template typescript
+
+2) switch to react application
+
+    > cd fruits-frontend
+
+3) download the node modules
+
+        => redux @types/redux
+
+        => redux-thunk  @types/redux-thunk
+
+        => react-redux @types/react-redux
+
+        => axios  @types/axios
+
+        => react-router-dom @types/react-router-dom
+
+> yarn add redux @types/redux redux-thunk @types/redux-thunk react-redux @types/react-redux axios @types/axios react-router-dom @types/react-router-dom --save
+
+
+4) implement the thunk middleware for "http://localhost:8080/products
+
+
+        => model
+             ********************************
+             fruits_frontend
+                           src
+                             model
+                               Product.tsx
+            **********************************
+                    finally "Product" model is ready.
+
+        => types
+                *******************************************
+                fruits_frontend
+                              src
+                                types
+                                  ProductActionTypes.tsx
+                ********************************************
+
+        => action
+
+               ********************************************
+               fruits_frontend
+                             src
+                               actions
+                                  ProductActions.tsx
+                *********************************************
+                    finally "getProducts()" action is ready.
+
+        => reducer
+
+                ********************************************
+                fruits_frontend
+                              src
+                                reducer
+                                    ProductReducer.tsx
+                ********************************************
+                    finally "productReducer" is ready.
+
+        => store
+                
+        => dispatch & subscription  (component)
+
+25-06-2021
+==========
+
+1) LoadingBox
+
+        if "loading" is "false", show "LoadingBox"
+
+2) MessageBox
+
+        if "error" equals "Network Error" show MessageBox
+                props ==> variant
+                {error}
+
+
+3) Condional Rendering
+
+4) Single Page Application
+
+
+
+
+
+29-06-2021
+==========
+
+                        ***** Category Module ******
+
+
+**************************************************
+fruits_frontend
+              src
+                model   
+                    Product.tsx
+
+                types
+                    CategoryActionTypes.tsx
+
+                actions
+                    CategoryActions.tsx
+
+                reducer
+                    CategoryReducer.tsx
+                
+                index.tsx
+
+                Category.tsx
+
+                App.tsx
+
+                index.css
+
+
+Deployment
+==========
+
+Backend Deployment
+==================
+
+1) push backend code to GitHub
+
+2) create the application in aws account
+
+3) implement CI/CD Process
+
+
+frontend Deployment
+==================
+1) configure cloud backend url in reactjs
+
+    .env
+
+
+2) install aws cli tool
+
+
+3) prepare the production build
+
+    > npm run build
+
+
+4) create the s3 bucket
+
+     bucket policy
+     =============
+     {
+        "Version": "2012-10-17",
+        "Statement": [
+            {
+                "Sid": "PublicReadGetObject",
+                "Effect": "Allow",
+                "Principal": "*",
+                "Action": "s3:GetObject",
+                "Resource": "arn:aws:s3:::deploy-app-ashokit/*"
+            }
+        ]
+    }
+
+
+5) create the IAM
+
+
+6) edit the package.json file
+
+
+7) execute the following comnands
+
+    > aws configure
+
+    > npm run build
+
+    > npm run deploy
+
+
+Bugs
+====
+
+Unit Test Cases
+
+Charts
+
+Hooks
+
+Forms with Validations
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

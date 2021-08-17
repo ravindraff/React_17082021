@@ -1,0 +1,563 @@
+1) node_modules
+     
+      - "node_modules" containes libraries, these libraries helps to execute the react application
+
+2) public/favicon.ico
+
+    - this is default symbol of react provided by facebook.
+
+3) public/index.html
+
+    - react library starts the execution from "index.html" file
+
+    - "index.html" file called as main template.
+
+    - "index.html" file containes "dom" element(<div></div>) whose id is "root"
+
+4) public/logo192.png, logo512.png
+
+    - react provides different resolutions to execute our application in different devices
+
+5) public/manifest.json
+
+    - used to configure the mobile application developments.
+
+6) public/robots.txt
+
+    - used to define the search engine keywords.
+
+7) src
+
+    - used to deploy the components
+
+8) src/App.tsx       (Component)
+       App.test.tsx  (Testing)
+       App.css       (Style Sheet)
+
+    - default Component of React
+
+9) src/index.css
+
+    - used to define the global styles.
+
+    - These styles appliable to entire react application.
+
+10) src/index.tsx
+
+    - used to register the Components.
+
+
+11) src/logo.svg
+
+    - representing default "svg" logo of reactjs
+
+
+12) src/react-app-env.d.ts
+
+    - used to define the react application environmental variable
+
+13) src/setupTests.ts
+
+    - helps to write the unit test cases to react application
+
+
+14) package.json
+
+    - used to download the libraries.
+
+
+Component
+---------
+
+    - React application is collabration of Components.
+
+    - As a React Developer, we can create more than one Component.
+
+    - As a React Developer, we can provide communication between one component to another component.
+
+    - React supports two types of components
+
+            1) Functional Level Component    (stateless component)
+
+            2) class level component         (statefull component)
+
+
+Functional Components
+---------------------
+
+    - simple "function" behaves like component.
+
+    - "React" is the predefined "class" provides the "component" environment.
+
+**********************************************
+demo-app
+       src
+         First.tsx
+
+         index.tsx
+*********************************************
+
+Props
+-----
+    - "props" is the predefined object in react library.
+
+    - "props" objet used to receive the data from parent component.
+
+*********************************************
+props-app
+       src
+         ParentComp.tsx
+         ChildComp.tsx        (props object)
+        
+         index.tsx
+*********************************************
+
+
+state
+-----
+    - state is the predefined object in "ReactJS".
+
+    - state used to "store" the component data.
+
+    - we will define state by using "useState()" function
+
+    - useState() called as hook.
+
+
+*********************************************************
+state-app
+        src
+          State.tsx
+
+          index.tsx
+*********************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                ****** State Management ******
+
+        - we can implement state Management applications by using "redux" library.
+
+1) store
+
+        - main application container called as store.
+
+        - store accomidates the initialstate, reducer, state.
+
+
+2) initialstate
+
+        - application default value called as initialstate.
+
+
+3) reducer
+
+        - business logic called as reducer.
+
+        - we must deploy reducer to store.
+
+
+4) state
+
+        - application(reducer) output called as state.
+
+5) dispatch
+
+        - requesting the store called as dispatch.
+
+        - dispatch containes actions... and values.....
+
+6) action
+
+        - application requirement called as action.
+
+
+7) values/payload
+
+        - application(reducer) input data called as payload
+
+
+8) subscribe
+
+        - receiving response from store to client called as subscribe.
+
+
+
+
+                                    ****** React Redux Example ******
+
+step 1.
+    create the react application
+
+    > npx create-react-app react-redux-ex --template typescript
+
+step 2.
+    switch to react application
+
+    > cd react-redux-ex
+
+step 3.
+    download the libraries
+
+        => redux
+
+        => react-redux
+
+
+    - redux library used to implement the redux architecture.
+
+    - react-redux used to integrate the redux to react application
+
+    > yarn add redux @types/redux react-redux @types/react-redux --save
+
+
+step 4.
+    create the reducer
+
+    ******************************************
+    react-redux-ex
+                 src
+                   reducer
+                      reducer.tsx
+    *****************************************
+
+
+step 5.
+    create the "store"
+
+    deploy the "reducer" to "store"
+
+    make the availability of "store" to "App" component
+
+    index.tsx
+
+step 6.
+    perform dispatch and subscribe from App component.
+
+    App.tsx
+
+
+
+Step 1.
+======
+    create the react example
+
+            > npx create-react-app redux-ex1 --template typescript
+
+
+Step 2.
+======
+    switch to react application
+
+    > cd redux-ex1
+
+Step 3.
+======
+    download libraries
+
+    @redux
+    @react-redux
+
+    - redux used to create the redux architecture
+
+    - react-redux used to integrate the redux to react application
+
+    > yarn add redux @types/redux react-redux @types/react-redux --save
+
+
+
+step 4.
+=======
+    create the reducer
+
+*****************************************************************
+redux-ex1
+        src
+          reducer
+              reducer.tsx
+*****************************************************************    
+
+step 5.
+=======
+    create the store, and deploy the reducer and make store availability to "App" component
+
+    index.tsx
+
+
+step 6.
+    perform subscribe and dispatch operations
+
+    App.tsx
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                    ***** Thunk Middleware *****
+
+    - Thunk Middleware used to "separate and moniter" the actions.
+
+    - we will download thunk Middleware with the help of yarn tool or npm tool.
+
+            > yarn add redux-thunk -save
+
+Step 1.
+    create the react application
+
+            > npx create-react-app thunk-app
+
+
+Step 2.
+    download the modules
+
+            > redux
+
+            > react-redux
+
+            > redux-thunk
+
+
+        - redux used to implement the redux architecture.
+
+        - react-redux used to integrate the redux to react application.
+
+        - redux-thunk used to separate and moniter the actions.
+
+        > yarn add redux react-redux redux-thunk --save
+
+
+
+step 3.
+        create the reducer
+
+        *********************************************
+        thunk-app
+                src
+                  reducer
+                      reducer.js
+        ********************************************
+
+step 4.
+
+    create the actions
+
+    ***********************************************
+    thunk-app
+            src
+              actions
+                   actions.js
+    **********************************************
+
+    withdrawAsync() and depositAsync() these two functions are important functions.
+
+
+Step 5.
+    create the store, and deploy the reducer and make the availability of store to App component
+
+    index.js
+
+Step 6.
+    create the App Component
+
+                            ***** Saga Middleware *****
+
+        - saga middleware, used to manipulate the actions.
+
+        - we will download saga middleware by using "yarn" tool.
+
+                > yarn add redux-saga --save
+
+
+step 1.
+    create the react application
+
+        > npx create-react-app saga-app
+
+            - where "saga-app" is the name of the react application.
+
+step 2.
+    switch to react application
+
+        > cd saga-app
+
+step 3.
+    download the node modules
+
+        => redux
+
+        => react-redux
+
+        => redux-saga
+
+        > yarn add redux react-redux redux-saga --save
+
+
+step 4.
+    create the reducer
+
+    ****************************************************
+    saga-app
+          src
+            reducer
+                reducer.js
+    ***************************************************
+
+
+step 5.
+
+    create the saga middleware
+
+    ***************************************************
+    saga-app
+           src
+             saga
+               saga.js
+    ***************************************************
+
+
+step 6.
+    create the "store", and deploy the "reducer with saga" middleware and make the availability to "App" component
+
+    index.js
+
+Step 7.
+    create the Component
+
+    App.js
+
+
+
+                            ***** Saga Middleware with axios module ******
+                    
+1) create the react application
+
+    > npx create-react-app crud-app
+
+2) switch to application
+
+    > cd crud-app
+
+3) download the node modules
+
+        => redux
+
+        => reat-redux
+
+        => redux-saga
+
+        => axios
+
+
+
+4) create the action
+
+*******************************************
+crud-app
+      src
+       actions
+          actions.js
+******************************************
+
+5) create the reducer
+
+*************************************************
+crud-app
+       src
+         reducer
+            reducer.js
+*************************************************
+
+6) create the store, deploy the "reducer with saga" and make the availability of store to App component
+
+Ex.
+    index.js
+
+
+7) create the App Component
+
+
+***************************************************************
+ProductScreen
+
+    => http://localhost:8080/api/products/productID
+
+
+    front-end
+            src
+              modal
+
+
+
+                                    ***** AWS Deploy *****
+
+1) create the s3 bucket
+
+        Ex.
+                ashokit-react-class-ex
+
+
+2) enable staic web hosting
+
+        Ex.
+                index.html
+
+
+3) edit the bucket policy
+
+    {
+        "Version": "2012-10-17",
+        "Statement": [
+            {
+                "Sid": "PublicReadGetObject",
+                "Effect": "Allow",
+                "Principal": "*",
+                "Action": "s3:GetObject",
+                "Resource": "arn:aws:s3:::ashokit-react-class-ex/*"
+            }
+        ]
+    }
+
+4) edit the package.json file
+
+    "deploy": "aws s3 cp --recursive ./build s3://ashokit-react-class-ex"
+
+    add above entry under "scripts"
+
+5) run the following command.
+
+    > npm run build
+
+    > npm run deploy
+
+
+
+

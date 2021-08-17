@@ -1,0 +1,13 @@
+Promises
+---------
+    - communication between producer and consumer called as Promise.
+
+    - Promises are special javascript objects.
+
+    - Producer creates the Promises.
+
+    - consumer consumes the Promises.
+
+    - "Promise" is the predefined class, used to create the "Promises".
+
+    - then() is the predefined function, used to consume the "Promise".

@@ -1,0 +1,214 @@
+React
+=====
+
+    - React is the javascript library.
+
+    - React given by facebook.
+
+    - React categorized into following types.
+
+        1) ReactJS
+
+        2) React Native
+
+        3) React BootStrap
+
+    - ReactJS, used to develop the web applications.
+
+    - React Native used to develop the mobile applications.
+
+    - React BootStrap used to apply the Rich UI to both Web applications and mobile applications
+
+    - we will develop ReactJS applications in two ways.
+
+        1) JSX
+
+        2) TypeScript
+
+    - JSX Stands for javascript and xml.
+
+    - JSX is the not the Programming language.
+
+    - JSX won't follows the OOPS.
+
+    - TypeScript is the Programming Language.
+
+    - TypeScript introduced by microsoft.
+
+    - TypeScript follows the OOPS.
+
+    - if we develop ReactJS applications with TypeScript, automatically we are getting OOPS Benfits.
+
+    - We will save TypeScript files in ReactJS with ".tsx" extension.
+
+            => TypeScript + XML
+
+    - Babel is the tool (inbuilt tool or react library) used to convert the TypeScript to equalent javascript.
+
+    - React applications are faster compared to other frameworks because of 
+      "Virtual DOM".
+
+    - React applications are component based applications.
+
+    - ReactJS Divides the applications into multiple components, so automatically modularity increases.
+
+    - React Components are Reusable.
+
+    - As a React Developer, we can provide communiation between one component to another component.
+
+Environmental Setup
+-------------------
+1) NodeJS
+
+   - "npm" stands for node packaging manager
+
+   - "npm" helps to install the react software.
+
+   - "npx" stands for node packaging runner.
+
+   - "npx" helps to create the react application.
+
+website : https://nodejs.org/en/download/
+
+file    : node-v14.15.2-x64.msi
+
+
+2) Yarn tool
+
+    - Yarn tool, used to download the 3rd party libraries.
+
+
+    > npm install -g yarn
+
+    => "-g" stands for global installation
+
+3) install "create-react-app" tool
+
+    - "create-react-app" tool provided by facebook.
+
+    - "create-react-app" tool, helps to create the react application
+
+    > npm install -g create-react-app
+
+creating the react application
+------------------------------
+1) create the directory (folder)
+    Ex.     
+          class_appliations
+2) switch to class_appliations directory
+    >  cd class_appliations
+
+3) create the react application
+
+    > npx create-react-app first-app --template typescript
+
+4) switch to react application
+
+    > cd first-app
+
+5) execute the react application
+    > yarn start
+        (or)
+    > npm start
+
+        - the default port no react application is 3000
+
+1) node_modules
+
+        - it containes libraries, and these libraries helps to execute the react application
+
+2) public/favicon.ico
+
+        - This is the default logo of react
+
+3) public/index.html
+
+        - React starts the execution from "index.html" file
+
+        - "index.html" file also called as main template
+
+4) public / logo192.png  & logo512.png
+
+    - These images helps to execute react applications in different resolutions
+
+
+5) public / manifest.json    
+
+    - configure the mobile appliction.
+
+6) public / robots.txt
+
+    - used to define teh SEO Keywords
+
+7) src
+    - used to deploy the React applications (Components)
+
+8) src/App.tsx
+       App.css
+       App.test.tsx
+
+    - above files are related to default Component
+
+    - "App" component is the default component
+
+9) src/index.css
+
+    - used to define the global styles
+
+10) src/index.tsx
+
+    - This file called as Registration file.
+
+    - All our components should register here.
+
+11) src/logo.svg
+
+    - this is the default SVG Logo of React application
+
+
+12) src/react-app-env.d.ts
+
+    - used to configure the Environmental varuables
+
+12) src/setupTests.ts
+
+    - used to write the unit test cases to react components
+
+13) package.json
+
+    - used to download the 3rd party libraries.
+
+14) tsconfig.json
+
+    - this file representing the typescript configurations
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+                           

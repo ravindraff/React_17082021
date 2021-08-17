@@ -1,0 +1,28 @@
+<!--
+<script>
+    function fun_one(){
+        let x = 10;
+        let y = 20;
+
+        return ()=>{
+            console.log( x );
+            console.log( y );
+        };
+    };
+
+    console.dir( fun_one() );
+</script>
+-->
+
+<script>
+    for(var i=0;i<5;i++){
+        ((i)=>{
+            setTimeout(()=>{
+                console.log(i);
+            },5000)
+        })(i);
+    }
+</script>
+
+
+

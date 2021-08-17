@@ -1,0 +1,321 @@
+Introduction to JavaScript
+--------------------------
+
+=> JavaScript is scripting language.
+
+=> JavaScript given by Netscape.
+
+=> Current Version of JavaScript is ES11 (ES2020).
+
+=> ES Stands for ECMA Script.
+
+=> JavaScript, used to develop the Angular, React, Node, VueJS,...... 
+
+=> we will save JavaScript files with ".js" extension.
+
+=> Visual Studio Code is the Suggestable IDE to Build JavaScript Applications.
+
+=> VSCode is the IDE, Provided by microsoft and Open Source IDE.
+
+=> JavaScript Execution is Synchronous.
+
+=> we will execute JavaScript in 2 ways.
+
+	1) intrepreter
+
+	2) node tool
+
+=> intrepreter present in browser engines.
+
+=> node tool, present in NodeJS.
+
+=> JavaScript is the Object Based Scripting Language.
+
+=> Vendor Provides the so many ready made objects because of this reason, we will call 
+   Object Based Scripting Language.
+
+	Ex.
+		document
+
+		window
+
+		console
+
+		Date
+
+		Time
+
+		Object
+
+		-----
+		-----
+		-----
+
+=> <script> tag, used to include the JavaScript to the webpages.
+
+
+
+Software Installations
+----------------------
+
+1) download and install NodeJS
+
+
+	- NodeJS, constaines following tools.
+
+		1) node
+
+		2) npm
+
+		3) npx
+
+	- node tool, helps to execute the JavaScript.
+
+	- npm stands for node packaging manager.
+
+	- npm used to download the 3rd party libraries.
+
+	- npx stands for node packaging runner.
+
+	- npx used to create the react applications
+		
+website : https://nodejs.org/en/download/
+
+file    : node-v14.16.1-x64.msi
+
+
+	msi stands for microsoft installer
+
+
+
+2) download and install Visual Studio Code
+
+	- Visual Studio Code is the Open Source IDE, Provided by Microsoft.
+
+	- Visual Studio Code Recomended to Build UI Applications like
+
+		Angular
+
+		React
+
+		Node
+
+		JavaScript
+
+		VueJS
+
+		----
+		----
+		---- 
+
+website : https://code.visualstudio.com/docs/?dv=win
+
+file    : VSCodeUserSetup-x64-1.55.2.exe
+
+
+
+
+												Functions
+	- particular business logic called as function.
+
+	- functions are used to reuse the "business" logic.
+
+	- we have following types of functions upto ES11.
+
+		1) Named Functions
+
+		2) Anonymous Functions / Arrow Functions / Fat Arrow Functions / CallBack Fuctions / Lamda Functions
+
+		3) Rest Parameters in Functions
+
+		4) Optional Parameters in Functions
+
+		5) Constructor Functions
+
+		6) IIFE (Immidiate Invokable Functional Expression)
+
+		7) Generator Functions
+
+		8) Default Parameters in Functions
+
+Named Functions
+---------------
+	- The function with the particular name called as named function.
+
+	- we wil create named functions by using "function" keyword.
+
+Syntax
+------
+
+//function definition
+function functionname(arg1,arg2,arg3,arg4,.....argn){
+	business logic
+};
+
+//call the function
+functionname(param1,param2,param3,param4,.....paramn);
+
+
+
+											****** Optional Parameters in Functions *****
+
+	- while passing the parameters, we will make few parameters are optional.
+
+	- this concept also introduced in "ES6".
+
+	- optional parameters we will represent with "?"
+
+	- optional parameters concept will work only in "TypeScript" Environment.
+
+	- Superset of JavaScript called as TypeScript.
+
+	- TypeScript introduced by microsoft.
+
+	- TypeScript follows the OOPS.
+
+	- TypeScript files we will save with ".ts" extension.
+
+	- Browsers won't understand TypeScript.
+
+	- So, as a TypeScript Developer we must convert TypeScript to Equalent JavaScript.
+
+	- conversion from TypeScript to Equalent JavaScript called as "Transpilation".
+
+	- "tsc" is the tool, used to perform the Transpilation.
+
+	- "tsc" stands for TypeScript Compiler.
+
+Installation of Softwares
+-------------------------
+install TypeScript
+
+> npm install -g typescript
+
+	- "npm" stands for node packaging manager.
+
+	- "npm" present in "NodeJS".
+
+	- "-g" stands for global Installation.
+
+
+Transpilation
+-------------
+
+> tsc demo.ts  
+       o/p
+   demo.js
+
+> node demo.js
+
+
+
+
+
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,179 @@
+<!--
+    ajax calls
+    ----------
+        - executing the network calls independently/concurantly called as ajax calls.
+
+        - jQuery is the javascript library, used to make the asynhcronous calls.
+
+        - we will include "jQuery" by using following "CDN".
+
+        https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js
+
+        - in jQuery library we have ajax() function, used to make asynchronous calls.
+
+        - "$" symbol, used to refer the jQuery library.
+-->
+
+<!--
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <script>
+            $.ajax({
+                method : "GET",
+                url : "https://restcountries.eu/rest/v2/all",
+                success : (posRes)=>{
+                    console.log(posRes);
+                },
+                error : (errRes)=>{
+                    console.log(errRes);
+                }
+            })
+        </script>
+    </body>
+</html>
+-->
+
+
+<!--
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <script>
+             $.ajax({
+                 method : "GET",
+                 url : "https://www.w3schools.com/angular/customers.php",
+                 success : (posRes)=>{
+                     console.log( posRes );
+                 },
+                 error : (errRes)=>{
+                     console.log( errRes );
+                 }
+             })
+        </script>
+    </body>
+</html>
+-->
+
+
+<!--
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <script>
+           $.ajax({
+               method : "POST",
+               url : "http://test-routes.herokuapp.com/test/uppercase",
+               data : {"message":"welcome to jquery"},
+               success : (posRes)=>{
+                   console.log( posRes );
+               },
+               error : (errRes)=>{
+                   console.log( errRes );
+               }
+           })
+        </script>
+    </body>
+</html>
+-->
+
+
+<!--
+    JSON Server
+    ----------
+        - JSON Server, used to develop the "rest" services.
+
+        Ex.
+            GET
+            POST
+            PUT
+            DELETE
+            ---
+            ---
+            ---
+        - JSON Server Supports only "JSON" Data.
+
+        - by default JSON Server running on port number "3000".
+
+        - we will install "JSON" Server by using following command.
+
+                > npm install -g json-server
+
+        - "-g" stands for global installation.
+
+        - we will load json data in json server by using following command.
+
+                > json-server --watch data.json
+
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <script>
+            $.ajax({
+                method : "GET",
+                url : "http://localhost:3000/products",
+                success : (posRes)=>{
+                    console.log( posRes );
+                },
+                error : (errRes)=>{
+                    console.log( errRes );
+                }
+            })
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

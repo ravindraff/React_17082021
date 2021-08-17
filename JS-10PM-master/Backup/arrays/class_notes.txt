@@ -1,0 +1,11 @@
+Arrays
+------
+    - collection of "hetrogeneous" and "indexed" elements called as "array".
+
+    - we will represent arrays by using "[]"
+
+    - index starts with "0".
+
+    - we will access array elements with indexes.
+
+    

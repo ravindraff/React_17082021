@@ -1,0 +1,63 @@
+<!--
+<!DOCTYPE html>
+<html>
+    <button id="myid">Click Me</button>
+    <script>
+
+        const throttle = (fn,delay)=>{
+            let last = 0;
+            return function(...args){
+                let now = new Date().getTime();
+                console.log(now);
+                if(now-last<delay){
+                    console.log(now, last, delay, (now-last));
+                    return;
+                }
+                last = now;
+                return fn(...args);
+            };
+        };
+
+
+        document.getElementById("myid").addEventListener("click", throttle( (e)=>{
+            console.log("Hello");
+        },5000) );
+    </script>
+</html>
+-->
+
+<script>
+    var grades = [
+        {name: 'John', grade: 8, sex: 'M'},
+        {name: 'Sarah', grade: 12, sex: 'F'},
+        {name: 'Bob', grade: 16, sex: 'M'},
+        {name: 'Johnny', grade: 2, sex: 'M'},
+        {name: 'Ethan', grade: 4, sex: 'M'},
+        {name: 'Paula', grade: 18, sex: 'F'},
+        {name: 'Donald', grade: 5, sex: 'M'},
+        {name: 'Jennifer', grade: 13, sex: 'F'},
+        {name: 'Courtney', grade: 15, sex: 'F'},
+        {name: 'Jane', grade: 9, sex: 'F'}
+    ]
+
+    console.log(
+        grades.filter((student)=>{
+            return student.sex === "F"
+        }).length
+    );
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

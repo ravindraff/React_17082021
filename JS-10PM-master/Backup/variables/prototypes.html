@@ -1,0 +1,30 @@
+<!--
+    constructor functions
+    ---------------------
+        [Note : every function in javascript is nothing but object]
+
+        collection of "variables" and "functions" called as class.
+
+        we can create classes by using "constructor" functions.
+
+        in constructor functions all members will start with "this" keyword.
+
+        we can create object to constructor functions by using "new" keyword.
+-->
+
+<script>
+    function class_one(){
+        this.var_one = "Hello_1";
+        this.var_two = "Hello_2";
+    };
+    class_one.prototype.var_three = "Hello_3";
+
+    let test_obj = new class_one();
+    console.log( test_obj );
+    console.log( test_obj.var_one, test_obj.var_two );
+    console.log( test_obj.var_three );       //__proto__                       
+
+    
+
+
+</script>

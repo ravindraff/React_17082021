@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Debouncing</title>
+    </head>
+    <body>
+        <button id="my_btn">Click Me</button>
+        <script>
+
+            const debounce = (fn,delay)=>{
+                let timer;
+                return function(...args){
+                    if(timer){
+                        clearTimeout(timer);
+                    }
+                    timer = setTimeout(()=>{
+                        fn(...args);
+                    },delay)
+                }
+            }
+
+           document.getElementById("my_btn").addEventListener("click", debounce( e=>{
+               console.log("proceed to pay")
+           }, 2000) );
+        </script>
+    </body>
+</html>

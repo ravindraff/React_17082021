@@ -1,0 +1,998 @@
+<!--
+    Function
+    --------
+        - particular business logic called as function.
+
+        - functions are used to reuse the business logic.
+
+        - we have following types of functions.
+
+                1) Named Functions
+
+                2) Anonymous Functions / Arrow Functions / NameLess Functions / CallBack Functions / Lamda Functions
+
+                3) Rest Parameters in Functions
+
+                4) Optional Parameters in Functions
+
+                5) Default Parameters in Functions
+
+                6) IIFE (Immidiate Invokable Functional Expression)
+
+                7) Generators
+
+                8) Constructor Functions
+
+-->
+
+<!--
+    Named Functions
+    ---------------
+        - The function with the particular name called as Named Function.
+        
+        Syntax
+        ------
+        //function definition
+        function func_one(param1,param2,param3,....param n){
+                
+                //business logic
+        
+        };
+
+
+        //call the function
+        func_one( arg1, arg2, arg3,......arg n);
+-->
+
+
+<!--
+<script>
+    function fun_one(){
+        return "welcome to named functions";
+    };
+
+    console.log( fun_one );                 //def
+
+    console.log( fun_one() );               //welcome to named functions
+
+</script>
+-->
+
+
+<!--
+<script>
+    function fun_one(){
+        return fun_two;
+    };
+
+    function fun_two(){
+        return "welcome to named functions";
+    };
+
+    console.log( fun_one()() );                             //welcome to named functions
+</script>
+-->
+
+
+<!--
+<script>
+    function fun_one(arg1,arg2,arg3){
+        console.log( arg1, arg2, arg3 );
+    }
+    fun_one("Angular12","NodeJS","MongoDB");                //Angular12 NodeJS MongoDB
+    fun_one();                                              //undefined undefined undefined
+    fun_one(undefined,"Go");                                //undefined Go undefined
+    fun_one(null,null,null);                                //null null null
+    fun_one( undefined,null,undefined );                    //undefined null undefined
+</script>
+-->
+
+
+<!--
+<script>
+    let arr = [];
+
+    function fun_one(){
+        return "Hello";
+    };
+
+    for(let i=0;i<5;i++){
+        arr.push( fun_one );
+    }
+
+    // console.log( arr[0]() );
+    // console.log( arr[1]() );
+    // console.log( arr[2]() );
+    // console.log( arr[3]() );
+    // console.log( arr[4]() );
+
+    arr.forEach((element,index)=>{
+        console.log( element() );
+    });
+
+</script>
+-->
+
+
+<!--
+    Anonymous Functions
+    -------------------
+        - The function without name called as anonymous function.
+
+        - anounymous functions also called as arrow functions.
+
+        - arrow functions introduced in ES6
+
+        - we will represent arrow functions by using "=>"
+
+    Syntax
+    ------
+    var/let/const variable_name = (arg1,arg2,arg3,.....argn)=>{
+        //business logic
+    }
+
+    variable_name(param1,param2,param3,......paramn);
+-->
+
+
+<!--
+<script>
+    let func_one = ()=>{
+        return "welcome to ES6 arrow functions";
+    };
+    console.log( func_one );
+    console.log( func_one() );                          //welcome to ES6 arrow functions
+</script>
+-->
+
+
+<!--
+<script>
+    let func_one = (arg1,arg2,arg3)=>{
+        console.log( arg1, arg2, arg3 );
+    };
+    func_one();                                     //undefined undefined undefined
+    func_one("Hello_1","Hello_2","Hello_3");        //Hello_1 Hello_2 Hello_3
+    func_one(undefined,"Welcome");                  //undefined Welcome undefined
+    func_one(null,null,null);                       //null null null
+</script>
+-->
+
+
+<!--
+<script>
+    let func_one = ()=>{
+        return ()=>{
+            return "Hello";
+        };
+    };
+    console.log( func_one()() );                    //Hello
+</script>
+-->
+
+
+<!--
+<script>
+    let func_one = (arg1,arg2,arg3)=>{
+        console.log( arg1(), arg2(), arg3() );
+    };
+    func_one( ()=>{ return "Hello_1" }, 
+              ()=>{ return "Hello_2" }, 
+              ()=>{ return "Hello_3" } );               //Hello_1 Hello_2 Hello_3
+</script>
+-->
+
+
+<!--
+    Rest Parameters in functions
+    ----------------------------
+        - Rest parameters, used to store the more than "one argument".
+        
+        - we will represent Rest Parameter by using "..." symbol.
+
+        - "..." symbol called as "Rest Parameter" / "Spread Operator".
+
+        - Spread Operator introduced in ES6.
+
+    Rules
+    -----
+        1) Spread Operator always should be "last".
+
+        2) we can't take more than "one spread" operator.
+-->
+<!--
+<script>
+    function fun_one(...arg1){
+        console.log( arg1 );
+    };
+    fun_one("Hello_1","Hello_2","Hello_3");                     //["Hello_1", "Hello_2", "Hello_3"]
+    fun_one();                                                  //[]
+    fun_one(undefined,"Hello_2");                               //[undefined, "Hello_2"]
+    fun_one(undefined,null,undefined);                          //[undefined, null, undefined]
+</script>
+-->
+
+<!--
+<script>
+    function fun_one(...arg1,...arg2){
+
+    };
+    fun_one("Hello_1","Hello_2");               //Uncaught SyntaxError: Rest parameter must be last formal parameter
+</script>
+-->
+
+<!--
+<script>
+    function fun_one(...arg1,arg2){
+
+    };                                          //Uncaught SyntaxError: Rest parameter must be last formal parameter
+</script>
+-->
+
+
+<!--
+<script>
+    function fun_one(arg1,...arg2){
+        console.log( arg1, arg2 );
+    }
+    fun_one();                              //undefined []
+    fun_one("Hello_1","Hello_2");           //Hello_1 ["Hello_2"]
+    fun_one("Hello_1","Hello_2","Hello_3"); //Hello_1  ["Hello_2", "Hello_3"]
+    fun_one(undefined,undefined);           //undefined [undefined]
+    fun_one(undefined,undefined,undefined); //undefined  [undefined, undefined]
+    fun_one(null,null,null);                //null [null, null]
+</script>
+-->
+
+
+<!--
+    Default Parameters
+    ------------------
+        while defining the functions, we will initilize the arguments with default values.
+
+        this concept also introduced in ES6
+-->
+
+
+
+<!--
+<script>
+    function fun_one(arg1="Hello_1",arg2="Hello_2",arg3="Hello_3"){
+        console.log( arg1, arg2, arg3 );
+    };
+    fun_one();                                      //Hello_1 Hello_2 Hello_3
+    fun_one("ReactJS","NodeJS","MongoDB");          //ReactJS NodeJS MongoDB
+    fun_one(undefined,undefined,undefined);         //Hello_1 Hello_2 Hello_3
+    fun_one(undefined,"Welcome_2");                 //Hello_1 Welcome_2 Hello_3
+    fun_one(null,null,null);                        //null null null
+</script>
+-->
+
+<!--
+<script>
+    function fun_one(arg1,arg2="Hello_2"){
+        console.log(arg1, arg2);
+    }
+    fun_one();                                  //undefined "Hello_2"
+    fun_one("Hello_1");                         //Hello_1 Hello_2
+    fun_one(undefined,undefined);               //undefined "Hello_2" 
+    fun_one(null,null);                         //null null              
+</script>
+-->
+
+
+<!--
+<script>
+    function fun_one(arg1,arg2="Hello_2",...arg3){
+        console.log( arg1, arg2, arg3 );
+    };
+
+    fun_one();                                              //undefined "Hello_2" []
+    fun_one("Hello_1");                                     //Hello_1 Hello_2 []
+    fun_one("Hello_1",undefined,"Hello_3");                 //Hello_1 Hello_2 ["Hello_3"]
+    fun_one("Hello_1",undefined,"Hello_3","Hello_4");       //Hello_1 Hello_2  ["Hello_3", "Hello_4"]
+    fun_one(undefined,undefined,undefined);                 //undefined "Hello_2" [undefined]
+    fun_one(null,null,null,null);                           //null null [null, null]
+</script>
+-->
+
+
+<!--
+    IIFE
+    ----
+        - Immidiate Invokable Functional Expression
+
+        - ES9
+
+        - self invokable functions
+
+    Syntax
+    ------
+       (function(arg1,arg2,arg3,.....argn){
+            //business logic
+       })(param1,param2,param3,.....paramn);
+
+
+       ((arg1,arg2,arg3,.....argn)=>{
+            //business logic
+       })(param1,param2,param3,.....paramn);
+-->
+
+<!--
+<script>
+    (()=>{
+        console.log("IIFE");
+    })();       //IIFE
+</script>
+-->
+
+
+<!--
+<script>
+    ((arg1,arg2,arg3)=>{
+        console.log( arg1, arg2, arg3 );
+    })("ReactJS","NodeJS","MongoDB");               //ReactJS NodeJS MongoDB
+</script>
+-->
+
+<!--
+<script>
+    let res = (()=>{
+        return "Hello";
+    })();
+    console.log( res );             //Hello
+</script>
+-->
+
+<!--
+<script>
+    ((arg1,arg2,arg3)=>{
+        console.log( arg1, arg2, arg3 );
+    })( (()=>{ return "ReactJS" })(), 
+        (()=>{ return "Deno" })(), 
+        (()=>{ return "MongoDB"})() );
+    //ReactJS Deno MongoDB
+</script>   
+-->
+
+
+<!--
+<script>
+    for(var i=0;i<5;i++){
+        ((i)=>{    
+            setTimeout(()=>{
+                console.log(i);
+            },5000)
+        })(i);
+    };
+
+    //0  1   2   3   4  (5sec)
+
+    //5  5   5   5   5  (5sec)   (wrong)  (bug)   (var)   (global polluting issue)
+
+    //ES6    let
+
+    //ES9   IIFE
+</script>
+-->
+
+
+
+<!--
+    Generators
+    ----------
+        - it is used to get the control on flow of execution, then we will choose "Genarators".
+
+        - Genarator Functions will prefix with "*".
+
+        - Generator Functions will return "cursor" mechanism.
+
+        - with cursor mechanism, we can control the flow of execution.
+-->
+
+
+<!-- <script>
+    function *fun_one(){
+        yield "Hello_1";
+        yield "Hello_2";
+        yield "Hello_3";
+        yield "Hello_4";
+        yield "Hello_5";
+    }
+    let cursor = fun_one();
+    console.log( cursor.next() );
+    console.log( cursor.next() );
+    console.log( cursor.next() );
+    console.log( cursor.next() );
+    console.log( cursor.next() );
+    console.log( cursor.next() );
+</script> -->
+
+
+<!--
+<script>
+    function *fun_one(){
+        yield "Hello_1";
+        yield *fun_two();
+        yield "Hello_3";
+    };
+    function *fun_two(){
+        yield "Hello_2";
+    };
+    let cursor = fun_one();
+    console.log( cursor.next() );
+    console.log( cursor.next() );
+    console.log( cursor.next() );
+    console.log( cursor.next() );
+</script>
+-->
+
+
+
+<!--
+<script>
+    function *fun_one(){
+        yield "Hello_1";
+        yield "Hello_2";
+        yield "Hello_3";
+        yield "Hello_4";
+        return "Hello_5";
+        yield "Hello_6";
+    };
+
+    let cursor = fun_one();
+    for(let i=0;i<6;i++){
+        console.log( cursor.next() );
+    }
+</script>
+-->
+
+
+
+
+<!--
+    constructor functions
+    ---------------------
+        - collection of "variables" and "functions" called as "class".
+
+        - before "ES6" version, we will create classes by using "constructor" function.
+
+        - in constructor functions all the members will prefix with "this" keyword.
+
+        - we will create object to the constructor functions by using "new" keyword.
+-->
+
+<!--
+<script>
+    function class_one(){
+        this.sub_one = "ReactJS";
+        this.sub_two = "NodeJS";
+        this.sub_three = "MongoDB";
+    };
+
+    let obj1 = new class_one();
+    console.log( obj1.sub_one, obj1.sub_two, obj1.sub_three );      //ReactJS NodeJS MongoDB
+
+    let obj2 = new class_one();
+    console.log( obj2.sub_one, obj2.sub_two, obj2.sub_three );      //ReactJS NodeJS MongoDB
+</script>
+-->
+
+
+<!--
+<script>
+    function class_one(){
+        this.sub_one = "ReactJS";
+        this.sub_two = "NodeJS";
+        this.sub_three = "MongoDB";
+
+        this.getSubOne = function(){
+            return this.sub_one;
+        };
+
+        this.getSubTwo = function(){
+            return this.sub_two;
+        };
+
+        this.getSubThree = function(){
+            return this.sub_three;
+        };
+    };
+
+    let obj1 = new class_one();
+    console.log( obj1.getSubOne(), obj1.getSubTwo(), obj1.getSubThree() );                  //ReactJS NodeJS MongoDB
+</script>
+-->
+
+
+
+<!--
+<script>
+    function class_one(arg1,arg2,arg3){
+        this.sub_one = arg1;
+        this.sub_two = arg2;
+        this.sub_three = arg3;
+    };
+    let obj1 = new class_one("Angular12","NodeJS","MongoDB");
+    console.log( obj1.sub_one, obj1.sub_two, obj1.sub_three );              //Angular12 NodeJS MongoDB
+
+    let obj2 = new class_one("ReactJS","NodeJS","MongoDB");
+    console.log( obj2.sub_one, obj2.sub_two, obj2.sub_three );              //ReactJS NodeJS MongoDB
+
+    let obj3 = new class_one("VueJS","NodeJS","MongoDB"); 
+    console.log( obj3.sub_one, obj3.sub_two, obj3.sub_three );              //VueJS NodeJS MongoDB
+</script>
+-->
+
+
+
+<!--
+<script>
+    function class_one(){
+
+    };
+    class_one.prototype.var_one = "Hello_1";
+    class_one.prototype.var_two = "Hello_2";
+    class_one.prototype.var_three = "Hello_3";
+
+    let obj1 = new class_one();
+    console.log( obj1.var_one, obj1.var_two, obj1.var_three );              //Hello_1 Hello_2 Hello_3
+</script>
+-->
+
+
+<!--
+<script>
+    function class_one(){
+
+    };
+    class_one.prototype.wish = "Welcome";
+    class_one.prototype.getWish = function(){
+        return this.wish;
+    };
+
+    let obj = new class_one();
+    console.log( obj.getWish() );                       //Welcome
+</script>
+-->
+
+
+
+<!--
+    function class_one(){
+
+    };
+    class_one.prototype.var_one = "Hello_1";
+
+    function class_two(){
+
+    };
+    class_two.prototype = Object.create( class_one.prototype );
+    class_two.prototype.var_two = "Hello_2";
+
+    let obj = new class_two();
+    console.log( obj.var_one, obj.var_two );                    //Hello_1 Hello_2
+
+
+    let obj1 = new class_one();
+    console.log( obj1.var_one );
+</script>
+-->
+
+
+<!--
+<script>
+    function class_one(){
+
+    };
+    class_one.prototype.fun_one = function(){
+        return "Hello_1";
+    };
+
+    function class_two(){
+
+    };
+    class_two.prototype = Object.create( class_one.prototype );
+    class_two.prototype.fun_two = function(){
+        return "Hello_2";
+    };
+
+    function class_three(){
+
+    };
+    class_three.prototype = Object.create( class_two.prototype );
+    class_three.prototype.fun_three = function(){
+        return "Hello_3";
+    }; 
+    
+    let obj1 = new class_one();
+    console.log( obj1.fun_one() );
+
+
+    let obj2 = new class_two();
+    console.log( obj2.fun_one(), obj2.fun_two() );
+
+
+    let obj3 = new class_three();
+    console.log( obj3.fun_one(), obj3.fun_two(), obj3.fun_three() );
+
+</script>
+-->
+
+
+
+<!--
+<script>
+    function class_one(){
+
+    };
+    class_one.prototype.dbFun = function(){
+        return "data from oracle database soon....!";
+    };
+
+    function class_two(){
+
+    };
+    class_two.prototype = Object.create( class_one.prototype );
+    class_two.prototype.dbFun = function(){
+        return "data from mongodb database soon....!";
+    };
+
+    let obj = new class_two();
+    console.log( obj.dbFun() );         //data from mongodb database soon....!
+</script>
+-->
+
+
+<!--
+    "optional parameters" in functions
+    --------------------------------
+        while calling the functions,we will make few parameters are "optional".
+
+        this concept also introduced in "ES6".
+
+        we will represent optional parameter by using "?"
+
+        optional parameters will work in "TypeScript".
+
+        TypeScript is the "programming" language.
+
+        TypeScript given by "Microsoft".
+
+        superset of javascript also called as TypeScript.
+
+        we will save TypeScript files with ".ts" extension.
+
+        we will install TypeScript by using following command.
+
+                > npm install -g typescript
+
+                npm stands for node packaging manager
+
+                -g stands for global installation
+
+        in general, browsers can't understand typescript.
+
+        so, we need to convert typescript to equalent javascript.
+
+        conversion from typescript to equalent javascript called as Transpilation.
+
+        "tsc" is the tool, used to perform transpilation.
+
+        "tsc" stands for typescript compiler.
+
+
+            > tsc demo.ts
+
+                 o/p
+
+            demo.js
+
+
+            > node demo.js
+
+-->
+
+
+<!--
+<script>
+    function fun_one(str1="",str2=str1.length){
+        console.log( str2 );
+    };
+    fun_one();
+    fun_one("javascript");          //10
+</script>
+-->
+
+<script>
+    let arr = [10,20,30,40,50];
+    delete arr[0];
+    console.log(arr);                   //[empty, 20, 30, 40, 50]
+    console.log(arr.length);            //5
+
+
+    arr.forEach((arg1,arg2)=>{
+        console.log( arg2 );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

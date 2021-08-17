@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Events....!</title>
+        <style>
+            #parent{
+                width: 300px;
+                height: 300px;
+                border: 1px solid red;
+                color: red;
+                text-align: center;
+            }
+
+            #child{
+                width: 250px;
+                height: 200px;
+                border: 1px solid green;
+                color: rosybrown;
+                margin-left: 20px;
+            }
+
+            #subchild{
+                width: 170px;
+                height: 100px;
+                border: 1px solid blue;
+                margin-left: 40px;
+            }
+        </style>
+    </head>
+    <body>
+            <div id="parent">
+                <h1>Parent</h1>
+                <div id="child">
+                    <h1>Child</h1>
+                    <div id="subchild">
+                        <h1>Subchild</h1>
+                    </div>
+                </div>
+            </div>
+    </body>
+
+    <script>
+        let parent = document.querySelector("#parent");
+        let child = document.querySelector("#child");
+        let subchild = document.querySelector("#subchild");
+
+        parent.addEventListener("click",()=>{
+            console.log("parent");
+        },true);
+
+        child.addEventListener("click",(e)=>{
+            e.stopPropagation();
+            console.log("child");
+        },true);
+
+        subchild.addEventListener("click",()=>{
+            console.log("subchild");
+        },true);
+
+
+    </script>
+
+
+
+    <!-- <script>
+        document.getElementById("subchild").addEventListener("click",()=>{
+            console.log("subschild");
+        });
+
+        document.getElementById("child").addEventListener("click",()=>{
+            console.log("child");
+        });
+
+        document.getElementById("parent").addEventListener("click",()=>{
+            console.log("parent");
+        });
+    </script> -->
+</html>
+
+
+<!--
+    Event Bubbling
+
+    subchild            child       parent
+    =========           =====       ======
+
+    subchild            child       parent
+    child               parent
+    parent
+
+
+    Event Capturing
+    
+    subchild            child       parent
+    --------            -----       ------
+    parent              parent      parent
+
+    child               child
+
+    subchild
+
+
+    e.stopPropagation() <==
+
+    DOM Manipualtion
+
+    getElementByClassName()
+
+-->
+

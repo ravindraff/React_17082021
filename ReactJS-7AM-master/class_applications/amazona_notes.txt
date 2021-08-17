@@ -1,0 +1,105 @@
+1) download modules
+
+        > yarn add redux react-redux redux-thunk @types/redux @types/react-redux @types/redux-thunk axios --save
+
+2) create the model object
+
+    ****************************************************
+    front-end
+            src
+              model
+                 product.ts
+    ***************************************************
+
+3) implement the actions
+
+    *******************************************************
+    front-end   
+           src
+             actions
+                 ProductActionTypes.ts      (Requirement)
+                 ProductAction.ts           (Implementaion)
+    ********************************************************
+
+
+
+
+4) implement the reducer
+
+
+5) create the store
+
+        index.tsx
+
+
+6) create the HomeScreen
+
+
+ProductScreen
+=============
+front-end
+        src
+          modal
+             detail.ts
+
+          action
+                DetailActionTypes.ts
+                DetailAction.ts
+            
+          reducer
+                detail.ts
+          screens
+              ProductScreen.ts
+
+        => http://localhost:8080/api/products/productID
+
+
+CartScreen
+==========
+
+*********************************************************
+front-end
+        src
+          modal
+             cart.modal.ts
+          action
+             cartActionTypes.ts
+             cartAction.ts
+
+          reducer
+            cart.reducer.ts
+
+          screens
+            CartScreen.ts
+********************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    **************************************************************
+    front-end
+            src
+              reducer
+                  product.ts
+    **************************************************************
+
+
+

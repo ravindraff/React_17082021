@@ -1,0 +1,481 @@
+<!--
+    functions
+    ---------
+        - particular business logic called as function.
+        - functions are used to reuse the business logic.
+        - we have following types of functions upto ES11
+        1) Named Functions
+        2) Anonymous Functions / 
+           Arrow Functions / 
+           Fat Arrow Functions / 
+           Lamda Functions / 
+           CallBack Functions
+        3) rest parameters in functions
+        4) default parameters in functions
+        5) optional parameters in functions
+        6) generators
+        7) constructor functions
+        8) IIFE (Immidiate Invokable Functional Expressions)
+
+-->
+
+<!--
+    Named Functions
+    ---------------
+        - The function with particular name called as Named Function.
+        
+    Syntax.
+    -------
+
+    //function definition
+    function functionname(arguments){
+        //businss logic
+    };  
+
+    //call the function
+    functionname(parameters)
+-->
+
+<!--
+<script>
+    function fun_one(){
+        return "Hello";
+    };
+    console.log( fun_one );
+    console.log( fun_one() );
+</script>
+-->
+
+
+<!--
+<script>
+    function fun_one(arg1,arg2,arg3){
+        console.log( arg1, arg2, arg3 );
+    };
+
+    fun_one("Angular","NodeJS","MongoDB");     //Angular NodeJS MongoDB
+    fun_one("ReactJS","NodeJS","MySQL");       //ReactJS NodeJS MySQL
+    fun_one("VueJS","NodeJS","SQLServer");     //VueJS NodeJS SQLServer
+</script>
+-->
+
+
+<!--
+<script>
+    function fun_one(){
+        return fun_two;
+    };
+
+    function fun_two(){
+        return "Hello";
+    };
+
+    console.log( fun_one()() );    //Hello
+</script>
+-->
+
+
+<!--
+<script>
+    let arr = [];
+
+    function fun_one(){
+        return "Hello";
+    };
+
+    for(var i=0;i<5;i++){
+        arr.push( fun_one );
+    };
+
+    for(var j=0;j<arr.length;j++){
+        console.log( arr[j]() );
+    };
+   
+</script>
+-->
+
+
+<!--
+<script>
+    function meanStack(arg1,arg2,arg3){
+        console.log( arg1(), arg2(), arg3() );
+    };
+
+    function frontEnd(){
+        return "Angular11";
+    };
+
+    function server(){
+        return "NodeJS";
+    };
+
+    function backEnd(){
+        return "MongoDB";
+    };
+
+    meanStack( frontEnd,server,backEnd );    //Angular11 NodeJS MongoDB
+</script>
+-->
+
+
+
+<!--
+    Anonymous Functions
+    --------------------
+        - The function without name called as Anonymous Function.
+
+        - Anonymous functions also called as Arrow Functions/Fat Arrow functions/Lamda Functions/ Callback functions
+
+        - Arrow Functions introduced in ES6.
+
+        - we will represent Arrow Functions by using "=>"
+
+        - Arrow Functions are secured functions compared to other functions
+
+        Syntax
+        ======
+        var/let/const variablename = (arguments)=>{
+            //business logic
+        };
+
+        variablename()
+-->
+
+<!--
+<script>
+    var fun_one = ()=>{ return "Hello" };
+    console.log( fun_one );
+    console.log( fun_one() );
+</script>
+-->
+
+
+<!--
+<script>
+    var fun_one = (arg1,arg2,arg3)=>{
+        console.log( arg1, arg2, arg3 );
+    };
+    fun_one("ReactJS","NodeJS","MongoDB");    //ReactJS NodeJS MongoDB
+    fun_one("Angular","Deno","CouchDB");      //Angular Deno CouchDB
+    fun_one("VueJS","NodeJS","Firebase");     //VueJS NodeJS Firebase
+</script>
+-->
+
+<!--
+<script>
+    let outer = ()=>{
+        return ()=>{
+            return "Hello";
+        };
+    };
+    console.log( outer()() );
+</script>
+-->
+
+<!--
+<script>
+    let arr = [];
+    for(let i=0;i<5;i++){
+        arr.push( ()=>{ return "Hello" } );
+    };
+    arr.forEach((element,index)=>{
+        console.log( element() );
+    });
+</script>
+-->
+
+<!--
+    Rest Parameters in Functions
+
+    - we will hold more than one value by using Rest Parameters in Functions
+
+    - we will represent rest parameter by using "..."
+
+    - "..." called as spread operator.
+
+    - we can have only one spread operator per function.
+
+    - position of spread operator should be last in arguments
+-->
+
+<!--
+<script>
+    function fun_one(...arg1){
+        console.log(arg1);
+    };
+    fun_one("Hello_1");             //["Hello_1"]
+    fun_one("Hello_1","Hello_2");   //["Hello_1", "Hello_2"]
+    fun_one();                      //[]
+    fun_one(undefined);             //[undefined]
+    fun_one(null,undefined,null);   //[null, undefined, null]
+</script>
+-->
+
+<!--
+<script>
+    let obj1 = {
+        num:1
+    };
+    let obj2 = {...obj1};
+    console.log(obj2);      //{num: 1}
+    console.log(obj1);      //{num: 1}
+
+    obj2.num = 2;
+    console.log(obj2);      //{num: 2}
+    console.log(obj1);      //{num: 1}
+</script>
+-->
+
+<!--
+<script>
+    function fun_one(...arg1,...arg2){
+
+    };    //Uncaught SyntaxError
+</script>
+-->
+
+<!--
+<script>
+    function fun_one(...arg1,arg2){
+
+    };   //Uncaught SyntaxError
+</script>
+-->
+
+
+<!--
+<script>
+    function fun_one(arg1,...arg2){
+        console.log(arg1,arg2);
+    };
+    fun_one();                      //undefined []
+    fun_one(undefined,undefined);   //undefined [undefined]
+    fun_one(null,null,null);        //null  [null, null]
+    fun_one(10,10);                 //10 [10]
+    fun_one([10],[10,20]);          //arg2[0][1]
+</script>
+-->
+
+<!--
+    Default Parameters in functions
+         - while defining the functions, parameters are initilized with default values.
+
+         - this concept also introduced in ES6
+-->
+
+
+<!--
+<script>
+    function fun_one(arg1="Angular11",
+                     arg2="NodeJS",
+                     arg3="MongoDB"){
+        console.log( arg1, arg2, arg3 );
+    };
+    fun_one();                          //Angular11 NodeJS MongoDB
+    fun_one("ReactJS");                 //ReactJS NodeJS MongoDB
+    fun_one("VueJS","Deno","CouchDB");  //VueJS Deno CouchDB
+    fun_one(undefined,"Spring Boot");   //Angular11 Spring Boot MongoDB
+    fun_one(null,null,null);            //null null null
+</script>
+-->
+
+
+<!--
+    normal parameter with default parameter
+
+<script>
+    function fun_one(arg1,arg2="Hello_2"){
+        console.log(arg1,arg2);
+    };
+    fun_one("Hello_1");             //Hello_1 Hello_2
+    fun_one(undefined,undefined);   //undefined "Hello_2"
+    fun_one(null,null);             //null null
+</script>
+-->
+
+<!--
+<script>
+    //normal parameter, default parameter and rest parameter
+    function fun_one(arg1,arg2="Hello_2",...arg3){
+        console.log(arg1, arg2, arg3);
+    };
+    fun_one();          //undefined "Hello_2" []
+    fun_one("Hello_1"); //Hello_1 Hello_2 []
+    fun_one("Hello_1",
+            undefined,
+            "Hello_3"); //Hello_1 Hello_2 ["Hello_3"]
+    fun_one(undefined,
+            undefined,
+            undefined); //undefined "Hello_2" [undefined]
+    fun_one(null,
+            null,
+            null);      //null null [null]
+</script>
+-->
+
+
+<!--
+    generators
+        - generators are used to control the flow of execution inside the function.
+
+        - generators introduced in ES9
+
+        - generator functions will prefix with "*"
+
+        - generator functions will return "cursor mechanism".
+-->
+
+<!--
+<script>
+    function *fun_one(){
+        yield "Hello_1";
+        yield "Hello_2";
+        yield "Hello_3";
+        yield "Hello_4";
+        yield "Hello_5";
+    };
+    let cursor = fun_one();
+    console.log( cursor.next() );
+    console.log( cursor.next() );
+    console.log( cursor.next() );
+    console.log( cursor.next() );
+    console.log( cursor.next() );
+    console.log( cursor.next() );
+</script>
+-->
+
+<!--
+<script>
+    function *fun_one(){
+        yield 100;
+        yield 200;
+        yield 300;
+        yield 400;
+        return 500;
+        yield 600;
+    };
+    let cursor = fun_one();
+    console.log( cursor.next() );
+    console.log( cursor.next() );
+    console.log( cursor.next() );
+    console.log( cursor.next() );
+    console.log( cursor.next() );
+    console.log( cursor.next() );
+</script>
+-->
+
+
+<!--
+<script>
+    function *fun_one(){
+        yield "Hello_1";
+        yield *fun_two();
+        yield "Hello_3";
+    };
+    function *fun_two(){
+        yield "Hello_2";
+    };
+    let cursor = fun_one();
+    for(let i=0;i<3;i++){
+        console.log( cursor.next() );
+    }
+</script>
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+    IIFE
+    ====
+        IIFE Stands for Immidiate Invokable Functional Expression
+
+        IIFE functions automatically invokes.
+
+        IIFE Introduced in ES9.
+
+        IIFE, also called as Self Invokable Functions.
+
+        Syntax
+        ------
+        ((arguments)=>{
+            //business logic
+        })(parameters);
+-->
+
+<!--
+<script>
+    (()=>{
+        console.log("welcome to IIFE");
+    })();
+</script>
+-->
+<!--
+<script>
+    ((arg1,arg2,arg3)=>{
+        console.log(arg1,arg2,arg3);
+    })("Angular11","NodeJS","MongoDB");    //Angular11 NodeJS MongoDB
+</script>
+-->
+
+
+
+<!--
+<script>
+    let res = ((arg1)=>{
+        return `Welcome to ${arg1}`;
+    })("NodeJS");
+    console.log(res);
+</script>
+-->
+
+<!--
+    constructor functions
+    =====================
+        - it is used to create the classes.
+
+        - constructor functions introduced in <ES6.
+
+        - we can create object to the constructor function by using "new" keyword.
+
+        - in constructor function all the members (variables & functions) initilized with "this" keyword
+-->
+<script>
+    function class_one(){
+        this.sub_one = "ReactJS";
+        this.sub_two = "NodeJS";
+        this.sub_three = "MongoDB"
+    };
+    let obj = new class_one();
+    console.log( obj.sub_one, obj.sub_two, obj.sub_three );
+    //ReactJS NodeJS MongoDB
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
