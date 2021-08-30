@@ -9,6 +9,7 @@ import Posts from './layout/Posts';
 import Movies from './layout/Movies';
 import Calculator from './layout/Calculator';
 import Covid from './layout/Covid';
+import Lifecycle from './layout/Lifecycle';
 function App() {
   return (
     <div className="App">
@@ -22,7 +23,8 @@ function App() {
         <Route path="/movies" exact component={Movies} />
         <Route path="/claculator" exact component={Calculator} />
         <Route path="/covid" exact component={Covid} />
-      </Switch>
+        <Route path="/lifecycles" exact component={Lifecycle} />
+       </Switch>
       </Router>
       
     </div>
