@@ -1,0 +1,117 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.bgimage{
+  position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.3);
+    /* background-image: url('https://pixabay.com/get/g1ca60e2a588a3a2b3dffde3fcebaa35cac902bc63d277bd18b09274226a0c851d053b8183212dc3328673c0537549ec0_640.jpg'); */
+    background-image: url('https://pixabay.com/get/gb55ecc5c878af97273e26b9ba08846a919a55bba1573944f488b92821ffaf92b48a60e5194f882d67533df876254aefa.jpg');
+    background-repeat: repeat-y;
+    width: 100%;
+    height: 100%;
+   
+  }
+  
+html{
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+body{
+  margin: 0;
+  height: 100vh;
+  font-size: 1.6rem;
+  font-family: Helvetica,Arial,sans-serif;
+  background-image: url('https://pixabay.com/get/gb55ecc5c878af97273e26b9ba08846a919a55bba1573944f488b92821ffaf92b48a60e5194f882d67533df876254aefa.jpg');
+  background-repeat: repeat-y;
+}
+.grid-container{
+  display:grid;
+  grid-template-areas: 
+  "header"
+  "main"
+  "footer"
+  ;
+  grid-template-columns: 1fr;
+  grid-template-rows: 5rem 1fr 5rem;
+  height: 100%;
+
+}
+header{
+  grid-area: header;
+  background-color:#203040;
+}
+main{
+  grid-area: main;
+  margin: 0;
+  padding: 1rem;
+}
+footer{
+  grid-area: footer;
+
+}
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; 
+  align-items: center;
+
+}
+.center{
+  justify-content: center;
+  color :#ffffffff;
+  background-color: #203040;
+}
+header a{
+  color:white;
+  padding:1rem;
+}
+a{
+  text-decoration: none;
+}
+a:hover{
+  color :#ff8000;
+}
+.brand{
+  font-size: 3rem;
+  font-weight: bold;
+
+}

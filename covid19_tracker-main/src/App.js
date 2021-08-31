@@ -3,9 +3,13 @@ import React,{useEffect,useState} from 'react'
 const App = () => {
   const [data,setData] = useState([]);
   useEffect(() =>{
-    fetch('https://api.covid19india.org/data.json').then(
+    fetch('https://api.covid19india.org/data.json')
+    .then(
       res => res.json()
-    ).then(jsondata => setData(jsondata.statewise))
+    )
+    .then(
+      jsondata => setData(jsondata.statewise)
+    )
   },[])
   return (
     <div>
